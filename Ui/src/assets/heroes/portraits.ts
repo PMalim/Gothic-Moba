@@ -1,3 +1,4 @@
+/// <reference types="vite/client" />
 import leeFace from './lee-portrait.jpg';
 import leeCard from './lee-card.jpg';
 import diegoFace from './diego-portrait.jpg';

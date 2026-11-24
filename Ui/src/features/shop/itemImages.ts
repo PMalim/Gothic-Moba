@@ -1,3 +1,4 @@
+/// <reference types="vite/client" />
 const files = import.meta.glob('../../assets/items/*.webp', { eager: true, query: '?url', import: 'default' }) as Record<string, string>;
 
 export const ITEM_IMAGES: Record<string, string> = Object.fromEntries(
