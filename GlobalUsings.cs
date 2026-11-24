@@ -1,0 +1,9 @@
+global using GothicOnline;
+global using BotArena.Ai;
+global using BotArena.Ai.Behavior;
+global using BotArena.Ai.Behaviours;
+global using BotArena.Ai.Components;
+global using BotArena.Ai.Kinds;
+global using BotArena.Ai.Lanes;
+global using BotArena.Ai.Memory;
+global using BotArena.Ai.Debug;

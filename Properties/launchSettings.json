@@ -1,0 +1,21 @@
+{
+  "profiles": {
+    "G2O server (C#)": {
+      "commandName": "Executable",
+      "executablePath": "../../runtime/server-windows-x64/G2O_Server.x64.exe",
+      "workingDirectory": "../../runtime/server-windows-x64"
+    },
+    "G2O server (C# + C++)": {
+      "commandName": "Executable",
+      "executablePath": "../../runtime/server-windows-x64/G2O_Server.x64.exe",
+      "workingDirectory": "../../runtime/server-windows-x64",
+      "nativeDebugging": true
+    },
+    "Symulacja G2O (bez klienta)": {
+      "commandName": "Executable",
+      "executablePath": "../../build/windows-x64/Release/bridge-tests.exe",
+      "commandLineArgs": "../../dist/modules/g2o-csharp.x64.dll bin/Debug/net10.0/BotArena.dll ../../tests/native/bot-arena.nut bin/Debug/net10.0/BotArena.dll",
+      "workingDirectory": "."
+    }
+  }
+}

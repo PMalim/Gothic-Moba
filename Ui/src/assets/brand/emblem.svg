@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-label="Gothic Moba">
+  <defs>
+  
+  <filter id="stone" x="-8%" y="-15%" width="116%" height="130%" color-interpolation-filters="sRGB">
+    <feTurbulence type="fractalNoise" baseFrequency="0.06" numOctaves="3" seed="7" result="warp"/>
+    <feDisplacementMap in="SourceGraphic" in2="warp" scale="8" xChannelSelector="R" yChannelSelector="G" result="rough"/>
+    <feGaussianBlur in="rough" stdDeviation="1.5" result="height"/>
+    <feDiffuseLighting in="height" surfaceScale="14" diffuseConstant="1.6" lighting-color="#e6dabd" result="diffuse">
+      <feDistantLight azimuth="235" elevation="30"/>
+    </feDiffuseLighting>
+    <feSpecularLighting in="height" surfaceScale="6" specularConstant="1.7" specularExponent="40" lighting-color="#efe3c6" result="spec">
+      <feDistantLight azimuth="235" elevation="40"/>
+    </feSpecularLighting>
+    <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="3" seed="12" result="grain"/>
+    <feColorMatrix in="grain" type="matrix" values="1 0 0 0 0  1 0 0 0 0  1 0 0 0 0  0 0 0 0 1" result="grainTint"/>
+    <feFlood flood-color="#2e271f" result="baseColor"/>
+    <feBlend in="diffuse" in2="baseColor" mode="multiply" result="lit"/>
+    <feBlend in="lit" in2="grainTint" mode="multiply" result="mix"/>
+    <feComponentTransfer in="mix" result="litGrain"><feFuncR type="linear" slope="5.4"/><feFuncG type="linear" slope="5.4"/><feFuncB type="linear" slope="5.4"/></feComponentTransfer>
+    <feComposite in="spec" in2="rough" operator="in" result="specIn"/>
+    <feComposite in="litGrain" in2="rough" operator="in" result="face"/>
+    <feMerge result="stone"><feMergeNode in="face"/><feMergeNode in="specIn"/></feMerge>
+    <feMorphology in="rough" operator="dilate" radius="2.2" result="grow"/>
+    <feFlood flood-color="#0d0905"/><feComposite in2="grow" operator="in" result="outline"/>
+    <feOffset in="outline" dx="2" dy="5" result="shadowOff"/><feGaussianBlur in="shadowOff" stdDeviation="3" result="shadow"/>
+    <feMerge><feMergeNode in="shadow"/><feMergeNode in="outline"/><feMergeNode in="stone"/></feMerge>
+  </filter>
+  
+  <filter id="ringStone" x="-8%" y="-15%" width="116%" height="130%" color-interpolation-filters="sRGB">
+    <feTurbulence type="fractalNoise" baseFrequency="0.06" numOctaves="3" seed="21" result="warp"/>
+    <feDisplacementMap in="SourceGraphic" in2="warp" scale="8" xChannelSelector="R" yChannelSelector="G" result="rough"/>
+    <feGaussianBlur in="rough" stdDeviation="1.5" result="height"/>
+    <feDiffuseLighting in="height" surfaceScale="14" diffuseConstant="1.6" lighting-color="#dcd0b4" result="diffuse">
+      <feDistantLight azimuth="235" elevation="30"/>
+    </feDiffuseLighting>
+    <feSpecularLighting in="height" surfaceScale="6" specularConstant="1.7" specularExponent="40" lighting-color="#efe3c6" result="spec">
+      <feDistantLight azimuth="235" elevation="40"/>
+    </feSpecularLighting>
+    <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="3" seed="26" result="grain"/>
+    <feColorMatrix in="grain" type="matrix" values="1 0 0 0 0  1 0 0 0 0  1 0 0 0 0  0 0 0 0 1" result="grainTint"/>
+    <feFlood flood-color="#26201a" result="baseColor"/>
+    <feBlend in="diffuse" in2="baseColor" mode="multiply" result="lit"/>
+    <feBlend in="lit" in2="grainTint" mode="multiply" result="mix"/>
+    <feComponentTransfer in="mix" result="litGrain"><feFuncR type="linear" slope="5.4"/><feFuncG type="linear" slope="5.4"/><feFuncB type="linear" slope="5.4"/></feComponentTransfer>
+    <feComposite in="spec" in2="rough" operator="in" result="specIn"/>
+    <feComposite in="litGrain" in2="rough" operator="in" result="face"/>
+    <feMerge result="stone"><feMergeNode in="face"/><feMergeNode in="specIn"/></feMerge>
+    <feMorphology in="rough" operator="dilate" radius="2.2" result="grow"/>
+    <feFlood flood-color="#0d0905"/><feComposite in2="grow" operator="in" result="outline"/>
+    <feOffset in="outline" dx="2" dy="5" result="shadowOff"/><feGaussianBlur in="shadowOff" stdDeviation="3" result="shadow"/>
+    <feMerge><feMergeNode in="shadow"/><feMergeNode in="outline"/><feMergeNode in="stone"/></feMerge>
+  </filter>
+  
+  <filter id="glyphStone" x="-8%" y="-15%" width="116%" height="130%" color-interpolation-filters="sRGB">
+    <feTurbulence type="fractalNoise" baseFrequency="0.06" numOctaves="3" seed="11" result="warp"/>
+    <feDisplacementMap in="SourceGraphic" in2="warp" scale="8" xChannelSelector="R" yChannelSelector="G" result="rough"/>
+    <feGaussianBlur in="rough" stdDeviation="1.5" result="height"/>
+    <feDiffuseLighting in="height" surfaceScale="14" diffuseConstant="1.6" lighting-color="#e6dabd" result="diffuse">
+      <feDistantLight azimuth="235" elevation="30"/>
+    </feDiffuseLighting>
+    <feSpecularLighting in="height" surfaceScale="6" specularConstant="1.7" specularExponent="40" lighting-color="#efe3c6" result="spec">
+      <feDistantLight azimuth="235" elevation="40"/>
+    </feSpecularLighting>
+    <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="3" seed="16" result="grain"/>
+    <feColorMatrix in="grain" type="matrix" values="1 0 0 0 0  1 0 0 0 0  1 0 0 0 0  0 0 0 0 1" result="grainTint"/>
+    <feFlood flood-color="#3a322a" result="baseColor"/>
+    <feBlend in="diffuse" in2="baseColor" mode="multiply" result="lit"/>
+    <feBlend in="lit" in2="grainTint" mode="multiply" result="mix"/>
+    <feComponentTransfer in="mix" result="litGrain"><feFuncR type="linear" slope="5.4"/><feFuncG type="linear" slope="5.4"/><feFuncB type="linear" slope="5.4"/></feComponentTransfer>
+    <feComposite in="spec" in2="rough" operator="in" result="specIn"/>
+    <feComposite in="litGrain" in2="rough" operator="in" result="face"/>
+    <feMerge result="stone"><feMergeNode in="face"/><feMergeNode in="specIn"/></feMerge>
+    <feMorphology in="rough" operator="dilate" radius="2.2" result="grow"/>
+    <feFlood flood-color="#0d0905"/><feComposite in2="grow" operator="in" result="outline"/>
+    <feOffset in="outline" dx="2" dy="5" result="shadowOff"/><feGaussianBlur in="shadowOff" stdDeviation="3" result="shadow"/>
+    <feMerge><feMergeNode in="shadow"/><feMergeNode in="outline"/><feMergeNode in="stone"/></feMerge>
+  </filter>
+  <radialGradient id="vig" cx=".5" cy=".5" r=".6"><stop offset="0" stop-color="#2a1f14" stop-opacity=".0"/><stop offset="1" stop-color="#000" stop-opacity=".55"/></radialGradient>
+  <linearGradient id="rule" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8b7a5a" stop-opacity="0"/><stop offset=".5" stop-color="#cdbb94"/><stop offset="1" stop-color="#8b7a5a" stop-opacity="0"/></linearGradient>
+</defs>
+  
+    <polygon points="128.0,10.0 230.2,69.0 230.2,187.0 128.0,246.0 25.8,187.0 25.8,69.0" fill="#000" filter="url(#ringStone)"/>
+    <polygon points="128.0,36.0 207.7,82.0 207.7,174.0 128.0,220.0 48.3,174.0 48.3,82.0" fill="#120d08"/>
+    <polygon points="128.0,36.0 207.7,82.0 207.7,174.0 128.0,220.0 48.3,174.0 48.3,82.0" fill="url(#vig)"/>
+    <g filter="url(#glyphStone)"><g transform="translate(76 76) scale(1)"><path d="M88 24 L68 6 L36 6 L12 32 L12 70 L36 94 L68 94 L90 74 L90 54 L54 54" fill="none" stroke="#000" stroke-width="17" stroke-linejoin="miter" stroke-miterlimit="6" stroke-linecap="butt"/><polygon points="80,10 102,14 96,34 82,30" fill="#000"/></g></g>
+</svg>

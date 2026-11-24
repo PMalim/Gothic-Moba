@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <G2OGamemode>BotArena</G2OGamemode>
+    <UiDirectory>$(MSBuildThisFileDirectory)Ui\</UiDirectory>
+    <UiPackage>$(MSBuildThisFileDirectory)..\..\server\bot-arena\resources\BOTARENA_UI.ZIP</UiPackage>
+    <DefaultItemExcludes>$(DefaultItemExcludes);Ui\**</DefaultItemExcludes>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="GothicOnline.Server" HintPath="$(G2OSdkPath)GothicOnline.Server.dll" Private="false" />
+    <PackageReference Include="Dapper" Version="2.1.66" />
+    <PackageReference Include="MySqlConnector" Version="2.6.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="../../server/bot-arena/migrations/*.sql" Link="migrations/%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="WebCenter/Web/*" LogicalName="webcenter/%(Filename)%(Extension)" />
+  </ItemGroup>
+  <ItemGroup>
+    <UiSource Include="Ui\src\**;Ui\index.html;Ui\package.json;Ui\package-lock.json;Ui\vite.config.ts;Ui\tsconfig.json" />
+  </ItemGroup>
+
+  <Target Name="BuildUi" BeforeTargets="BeforeBuild" Condition="'$(BuildUi)' != 'false' And '$(OS)' == 'Windows_NT' And Exists('$(UiDirectory)package.json')" Inputs="@(UiSource)" Outputs="$(UiPackage)">
+    <Exec Command="powershell -NoProfile -ExecutionPolicy Bypass -File &quot;$(MSBuildThisFileDirectory)..\..\scripts\build-ui.ps1&quot;" ContinueOnError="true" />
+  </Target>
+</Project>

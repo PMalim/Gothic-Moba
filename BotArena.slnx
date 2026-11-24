@@ -1,0 +1,8 @@
+<Solution>
+  <Project Path="BotArena.csproj" />
+  <Project Path="Ui/BotArena.Ui.esproj">
+    <BuildDependency Project="BotArena.csproj" />
+    <Build />
+    <Deploy />
+  </Project>
+</Solution>

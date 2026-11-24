@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gothic Moba Web Center</title>
+  <link rel="icon" type="image/svg+xml" href="/emblem.svg">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand"><img class="emblem" src="/emblem.svg" alt=""><span>Gothic Moba <b>Web Center</b></span></div>
+    <nav id="tabs">
+      <button data-tab="overview" class="on">Przegląd</button>
+      <button data-tab="games">Gry <i id="gamesBadge" class="badge">0</i></button>
+      <button data-tab="chat">Czat</button>
+      <button data-tab="reports">Zgłoszenia <i id="reportsBadge" class="badge hidden">0</i></button>
+      <button data-tab="players">Gracze <i id="playersBadge" class="badge">0</i></button>
+    </nav>
+    <div class="right">
+      <span id="conn" class="pill off">łączenie…</span>
+      <button id="logout" class="ghost hidden">Wyloguj</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="overview" class="tab">
+      <div class="cards" id="cards"></div>
+      <div class="charts">
+        <div class="panel"><h3>Pamięć (MB) <small id="memLegend"></small></h3><canvas id="chMem" height="150"></canvas></div>
+        <div class="panel"><h3>CPU procesu (%)</h3><canvas id="chCpu" height="150"></canvas></div>
+        <div class="panel"><h3>Tick trybu (ms) <small>średnia / maks.</small></h3><canvas id="chTick" height="150"></canvas></div>
+      </div>
+    </section>
+
+    <section id="games" class="tab hidden">
+      <div class="split">
+        <div class="list" id="gameList"></div>
+        <div id="gameView" class="gameview"><p class="empty">Wybierz grę z listy.</p></div>
+      </div>
+    </section>
+
+    <section id="chat" class="tab hidden">
+      <div class="toolbar">
+        <select id="chatMatch"></select>
+        <input id="chatFind" type="search" placeholder="Szukaj w czacie…">
+        <label class="check"><input id="chatScroll" type="checkbox" checked> przewijaj</label>
+        <span id="chatCount" class="muted"></span>
+      </div>
+      <div id="chatBox" class="chatbox"></div>
+    </section>
+
+    <section id="reports" class="tab hidden">
+      <div class="toolbar">
+        <select id="repStatus">
+          <option value="">Wszystkie statusy</option><option value="new">Nowe</option><option value="seen">Przeczytane</option>
+          <option value="done">Załatwione</option><option value="rejected">Odrzucone</option>
+        </select>
+        <select id="repKind">
+          <option value="">Wszystkie rodzaje</option><option value="bug">Błąd</option><option value="complaint">Skarga</option>
+          <option value="idea">Pomysł</option><option value="balance">Balans</option><option value="other">Inne</option>
+        </select>
+        <input id="repFind" type="search" placeholder="Szukaj…">
+        <button id="repReload" class="ghost">Odśwież</button>
+        <a id="repCsv" class="btn" href="/api/reports.csv">Pobierz CSV</a>
+        <span id="repCount" class="muted"></span>
+      </div>
+      <div id="repList" class="replist"></div>
+    </section>
+
+    <section id="players" class="tab hidden">
+      <div class="panel"><table id="playerTable"></table></div>
+    </section>
+  </main>
+
+  <div id="login" class="overlay hidden">
+    <form id="loginForm" class="loginbox" autocomplete="off">
+      <img class="loginlogo" src="/logo.svg" alt="Gothic Moba">
+      <h2>Web Center</h2>
+      <p class="muted">Podaj hasło z pliku <code>config/webcenter.env</code></p>
+      <input id="password" type="password" placeholder="Hasło" autofocus>
+      <button type="submit">Zaloguj</button>
+      <p id="loginError" class="error"></p>
+    </form>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>

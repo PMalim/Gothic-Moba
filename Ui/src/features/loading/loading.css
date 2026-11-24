@@ -1,0 +1,115 @@
+.loading {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(ellipse at 50% 38%, #2a2013 0%, #120d08 60%, #070504 100%);
+  color: #d8c9a4;
+  opacity: 1;
+  transition: opacity 0.65s ease;
+}
+
+.loading.is-leaving {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.loading__center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 28rem;
+  max-width: 80vw;
+}
+
+.loading__logo {
+  margin: 0 0 2.2rem;
+  line-height: 0;
+}
+
+.loading__logo img {
+  display: block;
+  width: min(26rem, 70vw);
+  height: auto;
+  filter: drop-shadow(0 6px 1.2rem rgba(0, 0, 0, 0.7));
+}
+
+.loading__sub {
+  margin: 0.2rem 0 2.2rem;
+  font-size: 0.95rem;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  color: #8f8672;
+}
+
+.loading__bar {
+  position: relative;
+  width: 100%;
+  height: 0.55rem;
+  background: #0b0806;
+  border: 1px solid #6b5a3a;
+  box-shadow: inset 0 0 0.5rem #000, 0 0 0 1px #000;
+  overflow: hidden;
+}
+
+.loading__bar i {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, #6e5428, #d9b866, #6e5428);
+  background-size: 200% 100%;
+  animation: loading-shimmer 1.6s linear infinite;
+  transition: width 0.4s ease-out;
+}
+
+.loading__text {
+  margin: 0.9rem 0 0;
+  font-size: 0.9rem;
+  letter-spacing: 0.12em;
+  color: #a39983;
+}
+
+.loading__tip {
+  position: absolute;
+  bottom: 3rem;
+  max-width: 44rem;
+  margin: 0;
+  padding: 0 1rem;
+  text-align: center;
+  font-style: italic;
+  line-height: 1.5;
+  color: #8f8672;
+}
+
+@keyframes loading-shimmer {
+  to {
+    background-position: -200% 0;
+  }
+}
+
+.matchfade {
+  position: fixed;
+  inset: 0;
+  z-index: 85;
+  display: grid;
+  place-items: center;
+  background: #050403;
+  opacity: 1;
+  transition: opacity 0.9s ease;
+}
+
+.matchfade.is-leaving {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.matchfade p {
+  margin: 0;
+  color: #8a7a58;
+  font: 600 1rem var(--serif);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}

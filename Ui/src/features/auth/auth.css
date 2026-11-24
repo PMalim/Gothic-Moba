@@ -1,0 +1,114 @@
+.auth {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  z-index: 50;
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.7) 100%);
+}
+
+.auth__panel {
+  width: 26rem;
+  max-width: 92vw;
+  min-height: 0;
+  gap: 0.9rem;
+  animation: pop-in 0.25s ease-out;
+}
+
+.auth__logo {
+  margin: 0;
+  text-align: center;
+  line-height: 0;
+}
+
+.auth__logo img {
+  width: 18rem;
+  max-width: 85%;
+  height: auto;
+  margin: 0.3rem 0 0.2rem;
+}
+
+.auth__sub {
+  margin: -0.5rem 0 0.2rem;
+  text-align: center;
+  font-size: 0.8rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.auth__tabs {
+  display: flex;
+  border: 1px solid rgba(60, 42, 18, 0.7);
+}
+
+.auth__tabs button {
+  flex: 1;
+  padding: 0.5rem;
+  font: inherit;
+  font-size: 0.85rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #2c2216;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.auth__tabs button + button {
+  border-left: 1px solid rgba(60, 42, 18, 0.7);
+}
+
+.auth__tabs button.is-active {
+  background: #3b2a14;
+  color: #f1e3b8;
+}
+
+.auth__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.auth__field span {
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.auth__field input {
+  padding: 0.55rem 0.7rem;
+  font: inherit;
+  font-size: 1rem;
+  color: #2a2015;
+  background: rgba(255, 245, 220, 0.55);
+  border: 1px solid rgba(60, 42, 18, 0.7);
+  border-radius: 0.1rem;
+  outline: none;
+}
+
+.auth__field input:focus {
+  border-color: #5b3d17;
+  box-shadow: 0 0 0 2px rgba(150, 105, 40, 0.35);
+}
+
+.auth__error {
+  min-height: 1.3rem;
+  font-size: 0.88rem;
+  color: #8f2a1f;
+  text-align: center;
+}
+
+.auth__submit {
+  align-self: stretch;
+}
+
+.auth__hint {
+  margin: 0;
+  font-size: 0.78rem;
+  line-height: 1.45;
+  text-align: center;
+  font-style: italic;
+  color: var(--ink-soft);
+}

@@ -1,0 +1,145 @@
+:root {
+  --panel: rgba(17, 15, 12, 0.88);
+  --panel-solid: #15120e;
+  --line: #3a3126;
+  --gold: #d1ad63;
+  --gold-dim: #7d6a40;
+  --ink: #eee6d6;
+  --ink-dim: #9d927f;
+  --danger: #b3392f;
+  --ok: #6fae5b;
+  --radius: 0.55rem;
+  --serif: 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif;
+  --sans: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --mono: 'Cascadia Mono', Consolas, 'Courier New', monospace;
+  --ui: 1;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: calc(16px * var(--ui));
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  background: transparent;
+  overflow: hidden;
+}
+
+body {
+  color: var(--ink);
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+  user-select: none;
+}
+
+input {
+  user-select: text;
+}
+
+::-webkit-scrollbar {
+  width: 0.55rem;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--line);
+  border-radius: 0.3rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold-dim);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.38rem 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: 0.4rem;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.84rem;
+  cursor: pointer;
+  transition: background 0.1s, border-color 0.1s, color 0.1s;
+}
+
+.btn:hover:not(:disabled) {
+  background: rgba(200, 164, 92, 0.14);
+  border-color: var(--gold-dim);
+  color: var(--gold);
+}
+
+.btn:disabled {
+  opacity: 0.38;
+  cursor: default;
+}
+
+.btn--danger:hover:not(:disabled),
+.btn--danger.is-armed {
+  background: rgba(179, 57, 47, 0.3);
+  border-color: var(--danger);
+  color: #f1a49d;
+}
+
+.btn--warn:hover:not(:disabled) {
+  background: rgba(209, 150, 60, 0.18);
+  border-color: #b98534;
+  color: #e3b366;
+}
+
+.btn--active {
+  background: rgba(111, 174, 91, 0.2);
+  border-color: var(--ok);
+  color: #a9d79b;
+}
+
+.btn--ghost {
+  background: transparent;
+}
+
+body.mock {
+  background:
+    radial-gradient(ellipse at 30% 20%, #4a5b3c 0, transparent 55%),
+    radial-gradient(ellipse at 70% 80%, #3a3a52 0, transparent 60%),
+    linear-gradient(#27323a, #141a14);
+}
+
+.mock-bar {
+  position: fixed;
+  top: 0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  padding: 0.3rem 0.7rem;
+  border-radius: 1rem;
+  background: rgba(0, 0, 0, 0.55);
+  color: var(--ink-dim);
+  font-size: 0.72rem;
+  z-index: 100;
+}
+
+.mock-bar button {
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 0.8rem;
+  color: var(--ink);
+  font: inherit;
+  padding: 0.1rem 0.6rem;
+  cursor: pointer;
+}

@@ -1,0 +1,64 @@
+.wpw {
+  position: fixed;
+  top: 0.8rem;
+  left: 0.8rem;
+  width: 17.5rem;
+  padding: 0.7rem 0.8rem;
+  background: rgba(18, 14, 10, 0.88);
+  border: 1px solid #5a4a2c;
+  border-radius: 0.6rem;
+  color: var(--ink);
+  font-size: 0.82rem;
+  z-index: 25;
+  pointer-events: auto;
+}
+
+.wpw h2 { margin: 0 0 0.2rem; font: 600 1.15rem var(--serif); color: var(--gold); }
+.wpw h2 small { font: 0.7rem var(--sans); color: var(--ink-dim); margin-left: 0.4rem; }
+.wpw h3 { margin: 0.5rem 0 0.2rem; font-size: 0.9rem; color: var(--gold); }
+.wpw__stat, .wpw__hint, .wpw__keys { margin: 0.2rem 0; color: var(--ink-dim); }
+.wpw__keys { font-size: 0.72rem; }
+.wpw__hover b { color: #ffeb5a; }
+.wpw__name { margin: 0.1rem 0; font-weight: 600; color: #ff7be6; }
+.wpw__note { margin: 0.3rem 0; color: #a9d79b; }
+
+.wpw__tools { display: flex; flex-direction: column; gap: 0.15rem; }
+
+.wpw__tool {
+  padding: 0.2rem 0.5rem;
+  border: 1px solid var(--line);
+  border-radius: 0.35rem;
+  color: var(--ink-dim);
+}
+
+.wpw__tool.is-active { color: var(--gold); border-color: var(--gold); background: rgba(209, 173, 99, 0.12); }
+
+.wpw__layer { position: fixed; inset: 0; pointer-events: none; z-index: 20; }
+
+.wpw__label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 0.05rem 0.4rem;
+  border-radius: 0.3rem;
+  background: rgba(0, 0, 0, 0.62);
+  color: #fff;
+  font-size: 0.72rem;
+  white-space: nowrap;
+}
+
+.wpw__label.is-selected { background: rgba(255, 79, 216, 0.75); }
+.wpw__label.is-hover { background: rgba(255, 235, 90, 0.8); color: #000; }
+
+.wpw__cross {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  width: 0.9rem;
+  height: 0.9rem;
+  margin: -0.45rem 0 0 -0.45rem;
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 21;
+}
